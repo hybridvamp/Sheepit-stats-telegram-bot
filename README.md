@@ -10,3 +10,5 @@ A simple Telegram bot written in Python using python-telegram-bot to send you th
 
 Feel free to share any bugs you may ecounter.
 Note: The bot wasn't testet with more than one users using it in parallel, it may not work as intended or slow down.
+
+# WhatsApp version at https://github.com/usr577/Sheepit-stats-whatsapp-bot
