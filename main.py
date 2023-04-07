@@ -4,7 +4,7 @@ import requests
 
 def _gotstats(update,context):
     lmatch = 0
-    f = open("cookie.txt","r")
+    f = open("logins.txt","r")
     data = f.read()
     f.close()
     datar = data.split("/")
@@ -46,7 +46,7 @@ def _gotstats(update,context):
         return "You aren't registered yet!\nRegister using the '/register Username Password: ...' command."
 
 def _gotregister(update,context):
-    f = open("cookie.txt","r")
+    f = open("logins.txt","r")
     data = f.read()
     f.close()
     datar = data.split("/")
@@ -56,7 +56,7 @@ def _gotregister(update,context):
         return text
     else:
         content = update.message.text
-        f = open("cookie.txt","r")
+        f = open("logins.txt","r")
         data = f.read()
         f.close()
         arr = content.split(" ")
@@ -75,7 +75,7 @@ def _gotregister(update,context):
                         mdata = str(update.effective_user.id) + "/" + arr[1] + "/" + password
                     else:
                         mdata = data + "/" + str(update.effective_user.id) + "/" + arr[1] + "/" + password
-                    f = open("cookie.txt","w")
+                    f = open("logins.txt","w")
                     data = f.write(mdata)
                     f.close()
                     text = 'You sucessfully registered, you can now delete the message for safety measures and retrieve your stats using /stats'
@@ -91,7 +91,7 @@ def _gotregister(update,context):
             return text
 
 def _gotunregister(update,context):
-    f = open("cookie.txt","r")
+    f = open("logins.txt","r")
     data = f.read()
     f.close()
     datar = data.split("/")
@@ -102,7 +102,7 @@ def _gotunregister(update,context):
         datar.pop(cl)
         datar.pop(cl)
         data = str("/".join(datar))
-        f = open("cookie.txt","w")
+        f = open("logins.txt","w")
         data = f.write(data)
         f.close()
         text = "Sucessfully unregistered!"
