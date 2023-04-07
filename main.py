@@ -13,7 +13,7 @@ def _gotstats(update,context):
         pl = datar.index(sender) + 2
         password = datar[pl]
         name = datar[pl - 1]
-        accname = name + "'s stats:\n" + "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n"
+        accname = name + "'s stats:\n" + "⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n"
         login_url = "https://www.sheepit-renderfarm.com/user/authenticate"
         login_data = {
             "login": name,
@@ -81,7 +81,7 @@ def _gotregister(update,context):
                     text = 'You sucessfully registered, you can now delete the message for safety measures and retrieve your stats using /stats'
                     return text
                 else:
-                    text = 'Your Username or password isn\'t correct, the syntax of /cookie is "/cookie Username Cookie: ..."'
+                    text = 'Your Username or password isn\'t correct, the syntax of /register is "/register Username Password: ..."'
                     return text
             else:
                 text = 'The syntax of /register is "/register Username Password: ..."'
@@ -108,7 +108,7 @@ def _gotunregister(update,context):
         text = "Sucessfully unregistered!"
         return text
     else:
-        text = 'You aren\'t registered yet, you can register using "/cookie Username Cookie: ..."'
+        text = 'You aren\'t registered yet, you can register using "/register Username Password: ..."'
         return text
 
 async def gotstats(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -124,7 +124,7 @@ async def gotunregister(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     await update.message.reply_text(text)
 
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = "Commands:\n /help: Show this message\n /register: Register to this bot, syntax: \"/cookie Username Cookie: ...\" \n /unregister: Unregister from this bot\n NOTE: By registering here your login information WILL BE STORED, if you are uncomfortable with this (I can fully understand this), you can host your own bot with the code found here: https://github.com/usr577/Sheepit-stats-telegram-bot"
+    text = "Commands:\n /help: Show this message\n /register: Register to this bot, syntax: \"/register Username Password: ...\" \n /stats: Show your stats \n /unregister: Unregister from this bot\n NOTE: By registering here your login information WILL BE STORED, if you are uncomfortable with this (I can fully understand this), you can host your own bot with the code found here: https://github.com/usr577/Sheepit-stats-telegram-bot"
     await update.message.reply_text(text)
 
 app = ApplicationBuilder().token("<YOUR_TOKEN_HERE>").build()
