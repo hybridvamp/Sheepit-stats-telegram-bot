@@ -3,7 +3,7 @@ A simple Telegram bot written in Python using python-telegram-bot to send you th
 
 # Setup:
 1. Download the main.py file and create an empty file called logins.txt in the same directory.
-2. Change directory to where main.py and cookie.txt are located.
+2. Change directory to where main.py and logins.txt are located.
 3. Install python-telegram-bot using ` pip install python-telegram-bot --upgrade `.
 4. Replace the "<YOUR_TOKEN_HERE>" with your own token.
 5. Run main.py.
